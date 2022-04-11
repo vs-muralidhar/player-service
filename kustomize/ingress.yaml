@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  labels:
+    app: players
+  name: players
+  namespace: develop
+spec:
+  rules:
+    - host: vs-local.minikube.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: players
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: players
+  namespace: develop
+spec:
+  selector:
+    app: players
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+

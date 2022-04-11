@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: players
+  name: players
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: players
+  template:
+    metadata:
+      labels:
+        app: players
+    spec:
+      containers:
+      - image: registry.hub.docker.com/vsmuralidhar/player-service:latest
+        name: player-service
+        ports:
+        - containerPort: 8080
