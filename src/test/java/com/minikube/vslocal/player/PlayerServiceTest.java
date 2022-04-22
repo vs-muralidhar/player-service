@@ -30,7 +30,7 @@ public class PlayerServiceTest {
     PlayerService service;
 
     @Test
-    public void testFetchAllPlayers() {
+    public void testFetchAllPlayers() throws Exception {
         List<PlayerDataModel> players = new ArrayList<>();
         players.add(PlayerDataModel.builder().id(1).name("CR").position("forward").build());
         Mockito.when(repository.findAll()).thenReturn(players);

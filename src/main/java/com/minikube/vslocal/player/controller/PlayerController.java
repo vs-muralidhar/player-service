@@ -29,7 +29,7 @@ public class PlayerController {
     }
 
     @GetMapping("/players")
-    public ResponseEntity<List<Player>> findAllPlayers() {
+    public ResponseEntity<List<Player>> findAllPlayers() throws Exception {
         List<Player> players = service.fetchAllPlayers();
 
         return ResponseEntity.ok(players);
