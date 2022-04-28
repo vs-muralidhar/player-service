@@ -11,7 +11,7 @@ Simple Spring Boot REST Application that provides the basic CRUD services. Purpo
 - kustomize
 - newman
 
-# Maven-Jib Plugin
+## Maven-Jib Plugin
 
 ```sh
 mvn compile jib:build
