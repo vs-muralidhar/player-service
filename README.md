@@ -1,6 +1,6 @@
 # Player Service
 
-Simple Spring Boot REST Application that provides the basic CURD services. Purpose of this project is to integrate the different tech stack.
+Simple Spring Boot REST Application that provides the basic CRUD services. Purpose of this project is to integrate the different tech stack.
 
 ## Tech
 
@@ -11,7 +11,7 @@ Simple Spring Boot REST Application that provides the basic CURD services. Purpo
 - kustomize
 - newman
 
-# Maven-Jib Plugin
+## Maven-Jib Plugin
 
 ```sh
 mvn compile jib:build
