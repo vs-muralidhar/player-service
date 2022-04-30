@@ -23,9 +23,6 @@ public class PlayerDataModel {
     @Column(name = "position")
     private String position;
 
-    @ManyToOne()
-    private TeamDataModel team;
-
     public int getId() {
         return id;
     }
@@ -50,11 +47,4 @@ public class PlayerDataModel {
         this.position = position;
     }
 
-    public TeamDataModel getTeam() {
-        return team;
-    }
-
-    public void setTeam(TeamDataModel team) {
-        this.team = team;
-    }
 }
