@@ -29,16 +29,14 @@ public class PlayerController {
     }
 
     @GetMapping("/players")
-    public ResponseEntity<List<Player>> findAllPlayers() throws Exception {
+    public ResponseEntity<List<Player>> findAllPlayers() {
         List<Player> players = service.fetchAllPlayers();
-
         return ResponseEntity.ok(players);
     }
 
     @GetMapping("/player/{id}")
-    public ResponseEntity<Player> findPlayerById(@PathVariable("id") int id) {
-        Player player = new Player();
-
+    public ResponseEntity<Player> findPlayerById(@PathVariable("id") int id) throws Exception {
+        Player player = service.fetchPlayerById(id);
         return ResponseEntity.ok(player);
     }
 

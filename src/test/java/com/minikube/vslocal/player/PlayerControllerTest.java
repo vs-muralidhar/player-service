@@ -35,7 +35,7 @@ public class PlayerControllerTest {
 
     @Test
     public void testCreatePlayer() throws Exception {
-        Player player = new Player(1,"CR","forward");
+        Player player = new Player(1,"CR","forward","sample");
         Mockito.when(service.createPlayer(Mockito.any(Player.class))).thenReturn(1);
         mockMvc.perform(MockMvcRequestBuilders.post("/player")
                         .content(asJsonString(player))
@@ -46,7 +46,7 @@ public class PlayerControllerTest {
     @Test
     public void testGetAllPlayers() throws Exception {
         List<Player> players = new ArrayList<>();
-        players.add(new Player(1, "CR","forward"));
+        players.add(new Player(1, "CR","forward","sample"));
         Mockito.when(service.fetchAllPlayers()).thenReturn(players);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/players"))

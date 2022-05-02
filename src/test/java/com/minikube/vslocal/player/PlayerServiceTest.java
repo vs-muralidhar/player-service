@@ -40,7 +40,7 @@ public class PlayerServiceTest {
         players.add(player);
         Mockito.when(repository.save(Mockito.any(PlayerDataModel.class)))
                 .thenReturn(player);
-        Assertions.assertThat(service.createPlayer(new Player(1,"CR","forward"))).isEqualTo(1);
+        Assertions.assertThat(service.createPlayer(new Player(1,"CR","forward", "sample"))).isEqualTo(1);
     }
 
 }
