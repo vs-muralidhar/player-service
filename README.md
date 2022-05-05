@@ -32,7 +32,6 @@ k apply -k kustomize
 ```sh
 newman run newman/player-service.json --env-var "env=vs-local.minikube.com"
 ```
-![](../../../../Desktop/Screen Shot 2022-05-04 at 9.26.36 PM.png)
 
 [//]: # (k create deployment players --image=registry.hub.docker.com/vsmuralidhar/player-service:latest --port=8080 --dry-run=client -o yaml >> deployment.yaml)
 [//]: # (k create namespace develop --dry-run=client -o yaml >> namespace.yaml)
