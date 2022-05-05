@@ -91,7 +91,7 @@
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
-							"pm.test(\"Your test name\", function () {",
+							"pm.test(\"Response has valid value\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData[0].name).to.eql(\"Ronaldino\");",
 							"});"
@@ -111,6 +111,38 @@
 					],
 					"path": [
 						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/player/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{env}}/player/1",
+					"protocol": "http",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"player",
+						"1"
 					]
 				}
 			},
@@ -141,8 +173,7 @@
 		{
 			"key": "env",
 			"value": "localhost:8080",
-			"type": "default",
-			"disabled": true
+			"type": "default"
 		}
 	]
 }
