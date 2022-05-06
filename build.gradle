@@ -5,7 +5,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.springframework.boot' version '2.6.6'
+    id 'org.springframework.boot' version '2.6.7'
     id 'com.google.cloud.tools.jib' version '3.2.1'
 }
 
@@ -17,12 +17,12 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.6'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.6'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.6'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
     runtimeOnly 'com.h2database:h2:1.4.200'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.6'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     implementation 'org.javassist:javassist:3.28.0-GA'
 
@@ -30,6 +30,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testCompileOnly 'org.projectlombok:lombok:1.18.22'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 group = 'com.minikube.vs-local'
@@ -65,4 +68,8 @@ jib {
     to {
         image 'registry.hub.docker.com/vsmuralidhar/player-service:latest'
     }
+}
+
+test {
+    useJUnitPlatform()
 }
