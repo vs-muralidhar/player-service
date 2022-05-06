@@ -24,7 +24,7 @@ gradle jib
 ## Kustomize
 
 ```sh
-k apply -k kustomize
+kubectl apply -k kustomize
 ```
 
 ## Newman
