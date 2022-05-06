@@ -43,4 +43,14 @@ public class PlayerServiceTest {
         Assertions.assertThat(service.createPlayer(new Player(1,"CR","forward", "sample"))).isEqualTo(1);
     }
 
+    @Test
+    public void testGetPlayerById() throws Exception {
+        PlayerDataModel player = PlayerDataModel.builder().id(1).name("CR").position("forward").build();
+
+        Mockito.when(repository.getById(Mockito.anyInt())).thenReturn(player);
+
+        Assertions.assertThat(player.toString()).isNotNull();
+        Assertions.assertThat(service.fetchPlayerById(1).getId()).isEqualTo(1);
+    }
+
 }
